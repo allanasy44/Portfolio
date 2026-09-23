@@ -1,69 +1,26 @@
-import Image from "next/image";
+const projects = [
+  { number: "01", title: "Health Assistant", type: "Conversational AI · Full-stack", description: "A health-focused chatbot assistant designed to guide users through trusted information, structured conversations, and next-step recommendations.", tags: ["Python", "React", "APIs", "NLP"] },
+  { number: "02", title: "Predictive Models", type: "Machine Learning · Analytics", description: "Data-driven prediction workflows that turn business signals into practical forecasts, model outputs, and decision support.", tags: ["Python", "Pandas", "Scikit-learn", "SQL"] },
+  { number: "03", title: "Image Predictor", type: "Computer Vision · Product prototype", description: "An image classification experience that connects a simple interface to a prediction pipeline for fast, accessible visual analysis.", tags: ["Python", "Computer Vision", "React", "REST"] },
+  { number: "04", title: "Enterprise Systems", type: "Software engineering · Security", description: "Business applications and classified internal systems shaped around reliable workflows, access control, maintainability, and operational support.", tags: ["Java", "Spring Boot", "Laravel", "Docker"] },
+];
+
+const skills = ["Systems development", "Web application security", "API security testing", "Reconnaissance & enumeration", "Agile delivery", "Technical troubleshooting", "UX collaboration", "Networking & systems administration", "Vulnerability assessment", "User training & support", "Software implementation", "Debugging & research"];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="portfolio-site">
+      <header className="portfolio-header"><a className="portfolio-logo" href="#top"><span>AA</span><strong>Allan Asy Zhou</strong></a><nav aria-label="Portfolio navigation"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#contact">Contact</a></nav><a className="header-contact" href="mailto:allanasy44@gmail.com">Let&apos;s talk <span>↗</span></a></header>
+      <main id="top">
+        <section className="portfolio-hero"><div className="hero-grid-line" /><div className="hero-copy"><p className="portfolio-label">SOFTWARE DEVELOPER · SECURITY SPECIALIST</p><h1>Building useful<br /><i>systems with intent.</i></h1><p className="hero-summary">I&apos;m Allan, a full-stack developer and software engineer based in Harare. I design dependable digital products, solve complex technical problems, and help teams turn ideas into working software.</p><div className="hero-actions"><a className="dark-button" href="#work">Explore my work <span>↓</span></a><a className="text-link" href="https://github.com/allanasy44" target="_blank" rel="noreferrer">GitHub <span>↗</span></a></div></div><div className="hero-side"><div className="availability"><span className="pulse" /> Open to software development opportunities</div><div className="hero-coordinate">17°49&apos;S<br />31°03&apos;E</div><p>Harare<br />Zimbabwe</p></div></section>
+        <section className="statement-band"><p>From product interfaces to backend architecture and application security, I work across the layers that make software valuable in the real world.</p><span>SCROLL TO EXPLORE ↓</span></section>
+        <section className="portfolio-section work-section" id="work"><div className="section-heading"><div><p className="portfolio-label">SELECTED WORK</p><h2>Projects with a<br /><i>practical edge.</i></h2></div><span className="section-index">01 — 04</span></div><div className="project-list">{projects.map((project) => <a className="project-row project-link" href="https://github.com/allanasy44" target="_blank" rel="noreferrer" key={project.number}><span className="project-number">{project.number}</span><div className="project-main"><p className="project-type">{project.type}</p><h3>{project.title}</h3><p className="project-description">{project.description}</p><div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div><span className="project-arrow">↗</span></a>)}</div></section>
+        <section className="portfolio-section experience-section" id="experience"><div className="section-heading"><div><p className="portfolio-label">PROFESSIONAL EXPERIENCE</p><h2>Where I&apos;ve<br /><i>made an impact.</i></h2></div></div><div className="experience-list"><article><div className="experience-date">09/2025 — 06/2026</div><div><h3>Java Backend Developer <span>· Africa Software Architecture</span></h3><p>Designed and maintained enterprise REST APIs with Java 17 and Spring Boot. Implemented business logic, JPA/Hibernate persistence, performance improvements, production fixes, code reviews, and Agile delivery with Git, Maven, and Docker.</p><small>React · Java · SQL · Docker · Spring Boot</small></div></article><article><div className="experience-date">01/2022 — 03/2025</div><div><h3>Web Developer, IT &amp; Web Support <span>· Missions Work Relief Organisation</span></h3><p>Led development of a book review platform with React and TypeScript, collaborated on mobile-first UX, supported QA and release management, and built CI/CD automation for reliable delivery. Also provided end-user and systems support.</p><small>React · TypeScript · Node · Express · MongoDB · Laravel · Django · AWS · GitHub Actions</small></div></article><article><div className="experience-date">01/2024 — 12/2024</div><div><h3>Mobile Developer &amp; Software Support Assistant <span>· Judiciary Service Commission</span></h3><p>Developed a legal forms and payments application using MVVM and test-driven practices. Improved reliability through unit and Espresso UI testing while supporting secure applications and end users.</p><small>Flutter · Kotlin · RxJava · Retrofit · JUnit · Espresso · Laravel</small></div></article><article><div className="experience-date">01/2025 — 06/2025</div><div><h3>Freelance Web Developer <span>· Mobile Event Verification</span></h3><p>Championed a full-stack product for documenting and verifying customer engagements, working across technical and non-technical stakeholders from concept through delivery.</p><small>React · JavaScript · HTML · CSS · SQL · Express</small></div></article></div></section>
+        <section className="capabilities-section" id="skills"><div className="capabilities-intro"><p className="portfolio-label">CAPABILITIES</p><h2>Broad enough to see the whole system. <i>Focused enough to improve the detail.</i></h2></div><div className="capabilities-body"><div className="skill-cloud">{skills.map((skill) => <span key={skill}>{skill}</span>)}</div><div className="tool-columns"><div><p className="portfolio-label">LANGUAGES</p><p>JavaScript · TypeScript · PHP<br />Kotlin · Python · Java</p></div><div><p className="portfolio-label">TOOLS &amp; DATA</p><p>React · React Native · Node<br />SQL · MongoDB · Firestore<br />AWS · Firebase · Git · Figma</p></div><div><p className="portfolio-label">SECURITY</p><p>NIST CSF · CIS Controls<br />ISO 27001 · MITRE ATT&amp;CK<br />XSS · Threat analysis · Access control</p></div></div></div></section>
+        <section className="about-section"><div><p className="portfolio-label">A LITTLE MORE CONTEXT</p><h2>Engineering is a<br /><i>people skill, too.</i></h2></div><p>I bring a practical, collaborative approach to software work: understand the problem, make the system legible, communicate clearly, and ship improvements that last. Alongside development, my experience includes IT support, ERP systems, networking, software installation, hardware maintenance, and user training.</p></section>
+        <section className="contact-section" id="contact"><div><p className="portfolio-label">HAVE A PROJECT OR ROLE IN MIND?</p><h2>Let&apos;s build<br /><i>something useful.</i></h2></div><div className="contact-details"><a href="mailto:allanasy44@gmail.com">allanasy44@gmail.com <span>↗</span></a><a href="tel:+263775845535">+263 77 584 5535 <span>↗</span></a><a href="https://github.com/allanasy44" target="_blank" rel="noreferrer">github.com/allanasy44 <span>↗</span></a><p>Hatfield, Harare · Zimbabwe</p></div></section>
       </main>
+      <footer className="portfolio-footer"><span>© 2026 Allan Asy Zhou</span><span>Full-stack development · Software engineering · Offensive security</span><a href="#top">Back to top ↑</a></footer>
     </div>
   );
 }
